@@ -11,6 +11,39 @@ PassFirefox::PassFirefox() : m_box1{Gtk::Orientation::ORIENTATION_VERTICAL}, m_b
 }
 //PassFirefox::~PassFirefox(){}
 
+void PassFirefox::on_button_exporter(){
+  if( m_entry1.get_text_length() == 0 || m_entry2.get_text_length() == 0 ){
+    Gtk::MessageDialog empty( "Exportar com GPG arquivo", false, Gtk::MESSAGE_WARNING );
+    empty.set_title( "Falha ao exportar" );
+    empty.set_secondary_text( "É necessário preencher ambos os campos." );
+    empty.run();
+    return;
+  }
+
+  if( m_entry1.get_text() != m_entry2.get_text() ){
+    Gtk::MessageDialog empty( "Exportar com GPG arquivo", false, Gtk::MESSAGE_WARNING );
+    empty.set_title( "Falha ao exportar" );
+    empty.set_secondary_text( "As senhas precisam ser iguais." );
+    empty.run();
+    return;
+  }
+
+  ToolsPassFox tpf;
+  if( tpf.export_file( m_entry1.get_text() ) ) {
+    m_entry1.set_text("");
+    m_entry2.set_text("");
+    m_label1.set_text("\u2714 Arquivo salvo com sucesso!");
+    m_label5.set_markup("Salvo em: <b>" + tpf.passfirefox + "</b>");
+  }else{
+    Gtk::MessageDialog empty( "Falha ao Exportar arquivo", false, Gtk::MESSAGE_ERROR );
+    m_entry1.set_text("");
+    m_entry2.set_text("");
+    empty.run();
+    return;
+  }
+
+}
+
 void PassFirefox::set_hierarchy(){
   // Window
   add( m_fixed );
@@ -111,7 +144,7 @@ void PassFirefox::draw_widgets(){
   m_entry2.set_max_length( 32 );
 
   // Label 1
-  m_label1.set_text("Exportar senhas no formator GPG com criptografia");
+  m_label1.set_text("Exportar senhas no formato GPG com criptografia");
   m_label1.set_visible( true );
   m_label1.set_can_focus( false );
 
@@ -121,7 +154,7 @@ void PassFirefox::draw_widgets(){
   m_button1.set_can_focus( true );
   m_button1.set_focus_on_click( true );
   m_button1.set_border_width( 5 );
-  // Vai receber sinal
+  m_button1.signal_clicked().connect( sigc::mem_fun( *this, &PassFirefox::on_button_exporter ) );
 
   // Frame 2
   m_frame2.set_size_request( 100, 80 );

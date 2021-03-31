@@ -12,6 +12,7 @@
 #include <gtkmm/linkbutton.h>
 #include <gtkmm/messagedialog.h>
 #include <iostream>
+#include "tools-pass-fox/tools-pass-fox.hpp"
 
 class PassFirefox : public Gtk::Window {
   Gtk::Fixed m_fixed;
