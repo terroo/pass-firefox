@@ -1,0 +1,3 @@
+[submodule "tools-pass-fox"]
+	path = tools-pass-fox
+	url = https://github.com/terroo/tools-pass-fox
