@@ -13,7 +13,7 @@ Ainda está em desenvolvimento, mas se você quiser testar já está funcionando
 ```sh
 git clone https://github.com/terroo/pass-firefox
 cd pass-firefox
-git submodule update --init                                                                                                                                                               
+git submodule update --init
 make
 ./app-pass-firefox
 ```
