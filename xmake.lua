@@ -1,4 +1,4 @@
-set_project("appp-pass-firefox")
+set_project("app-pass-firefox")
 set_config("cxxflags", "-std=c++17")
 add_cflags("-g", "-Wall", {force = true})
 
