@@ -10,10 +10,11 @@ E com essa continuação:
 Ainda está em desenvolvimento, mas se você quiser testar já está funcionando a rotina de exportar as senhas do Firefox, basta rodar:
 > Precisa ter o [gtkmm 3.0](https://www.gtkmm.org/) instalado no seu computador!
 
+Install [xmake](https://xmake.io/)
+
 ```sh
 git clone https://github.com/terroo/pass-firefox
 cd pass-firefox
 git submodule update --init
-make
-./app-pass-firefox
+xmake && xmake run
 ```
