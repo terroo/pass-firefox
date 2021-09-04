@@ -70,3 +70,7 @@ target("app-pass-firefox")
   add_files("main.cpp")
   add_files("pass-firefox.cpp")
   add_files("tools-pass-fox/tools-pass-fox.cpp")
+-- Para comparar com o Makefile, rode:
+-- git checkout a7a3008
+-- Para reverter para o commit atual:
+-- git checkout $(git log --oneline origin/HEAD | awk '{print $1}' | sed -n 1p)
