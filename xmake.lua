@@ -74,3 +74,10 @@ target("app-pass-firefox")
 -- git checkout a7a3008
 -- Para reverter para o commit atual:
 -- git checkout $(git log --oneline origin/HEAD | awk '{print $1}' | sed -n 1p)
+--
+-- Se fizer alterações e quiser fazer o push:
+-- git add .
+-- git commit -m "mudanção legais"
+-- # git push origin HEAD:<name-of-remote-branch>, exemplo:
+-- git push origin HEAD:main
+--
