@@ -19,9 +19,8 @@ Instale o: [xmake](https://xmake.io/)
 
 # Compilar e rodar
 ```sh
-git clone https://github.com/terroo/pass-firefox
+git clone --recursive https://github.com/terroo/pass-firefox
 cd pass-firefox
-git submodule update --init
 xmake && xmake run
 ```
 
