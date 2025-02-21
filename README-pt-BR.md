@@ -19,6 +19,7 @@ Instale o: [xmake](https://xmake.io/)
 
 ## Compilar e rodar
 ```sh
+sudo apt install libgtkmm-3.0-dev libgtkmm-4.0-dev
 git clone --recursive https://github.com/terroo/pass-firefox
 cd pass-firefox
 make

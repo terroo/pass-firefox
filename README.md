@@ -19,6 +19,7 @@ It is still under development, but if you want to test it, the Firefox password 
 
 ## Compile and run
 ```sh
+sudo apt install libgtkmm-3.0-dev libgtkmm-4.0-dev
 git clone --recursive https://github.com/terroo/pass-firefox
 cd pass-firefox
 make
