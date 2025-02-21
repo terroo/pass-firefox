@@ -2,3 +2,5 @@ app-pass-firefox
 build
 .xmake
 .gitignore
+*.o
+*.d
